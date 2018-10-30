@@ -1,6 +1,3 @@
-// npm install --save mongoose-unique-validator
-// Con este pluging podremos hacer que las validaciones sean más sencillas de realizar
-
 var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
 

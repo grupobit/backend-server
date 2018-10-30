@@ -14,9 +14,13 @@ var Usuario = require('../models/usuario');
 
 app.get('/', ( req, res, next ) => {
 
+    var desde = req.query.desde || 0;
+    desde = Number(desde);
+
     Usuario.find({ }, 'nombre email img role')
-        .exec(
-            (err, usuarios) => {
+        .skip(desde)
+        .limit(5) 
+        .exec( (err, usuarios) => {
 
             if(err){
 
@@ -27,20 +31,19 @@ app.get('/', ( req, res, next ) => {
                 });
                 
             }
-            
-            res.status(200).json({
+
+            Usuario.count({}, (err, conteo) => {
+
+                res.status(200).json({
                     ok: true,
-                    usuarios: usuarios
+                    usuarios: usuarios,
+                    total: conteo
+                });
             });
 
     });
    
 });
-
-
-
-
-
 
 // ----------------------------------------------
 // Actualizar usuario.
@@ -137,11 +140,6 @@ app.post('/', mdAutenticacion.verificaToken, (req, res) => {
         });
 
     });
-
-    //).json({
-    //    ok: true,
-    //    body: body
-    //});
 
 });
 
