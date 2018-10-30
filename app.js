@@ -34,9 +34,10 @@ console.log('Base de datos: \x1b[32m%s\x1b[0m',' online');
 // ----------------------------------------------------------------------
 // 
 // ----------------------------------------------------------------------
-//var serveIndex = require('serve-index');
-//app.use(express.static(__dirname + '/'))
-//app.use('/uploads', serveIndex(__dirname + '/uploads'));
+// https://github.com/expressjs/serve-index
+// var serveIndex = require('serve-index');
+// app.use(express.static(__dirname + '/'))
+// app.use('/uploads', serveIndex(__dirname + '/uploads'));
 // ----------------------------------------------------------------------
 
 

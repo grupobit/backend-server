@@ -41,6 +41,7 @@ app.put('/:tipo/:id', ( req, res, next ) => {
     // Manejo de imagenes:
     // Para subir imagenes al backen instalamos la libreria 
     // npm install --save express-fileupload
+    // https://github.com/expressjs/serve-index
     // -------------------------------------------------------
  
     // Obtener nombre del archivo
